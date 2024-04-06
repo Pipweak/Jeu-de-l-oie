@@ -1,0 +1,17 @@
+$font: (
+  1: "EcritureA-Italique",
+  2: "EcritureA-Italique-Ligne",
+  3: "EcritureA-Italique-Orne",
+  4: "EcritureA-Italique-Orne-Ligne",
+  5: "EcritureA-Romain",
+  6: "EcritureA-Romain-Ligne",
+  7: "EcritureA-Romain-Orne",
+  8: "EcritureA-Romain-Orne-Ligne"
+);
+
+@each $suffix, $value in $font {
+  @font-face {
+    font-family: #{$value};
+    src: url("../assets/fonts/#{$value}.otf");
+  }
+}
