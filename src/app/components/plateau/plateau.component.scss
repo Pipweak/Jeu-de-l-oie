@@ -1,11 +1,11 @@
 main {
-  display: flex;
-  place-content: center;
   width: 100%;
   height: 100vh;
 
   svg {
-    height: 100%;
+    height: 98%;
+    margin: 0 auto;
+    width: 100%;
 
     .oie-bubble {
       fill: #FFF;
@@ -15,7 +15,7 @@ main {
     }
 
     .oie-bubble-text {
-      font-family: ArialMT, serif;
+      font-family: Arial, serif;
       font-size: 28px;
     }
 
@@ -31,12 +31,35 @@ main {
     }
 
     .oie-unicorn-speech {
+      font-family: var(--oie-font-7);
       stroke-width: 0.25;
       font-size: 30px;
     }
 
     g#PHONEMES g {
-      
+
     }
   }
 }
+
+.oie-drawer-container {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+
+
+  .oie-drawer {
+    padding: 20px;
+  }
+
+  .oie-sidenav-trigger {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
+
+  .oie-close-btn {
+
+  }
+}
+
