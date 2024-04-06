@@ -1,0 +1,42 @@
+main {
+  display: flex;
+  place-content: center;
+  width: 100%;
+  height: 100vh;
+
+  svg {
+    height: 100%;
+
+    .oie-bubble {
+      fill: #FFF;
+      stroke: #000;
+      stroke-width: 2;
+      stroke-miterlimit: 10;
+    }
+
+    .oie-bubble-text {
+      font-family: ArialMT, serif;
+      font-size: 28px;
+    }
+
+    .oie-stars-text,
+    .oie-unicorn-speech {
+      stroke: #000;
+      stroke-miterlimit: 10;
+    }
+
+    .oie-stars-text {
+      font-family: var(--oie-font-7);
+      font-size: 53px;
+    }
+
+    .oie-unicorn-speech {
+      stroke-width: 0.25;
+      font-size: 30px;
+    }
+
+    g#PHONEMES g {
+      
+    }
+  }
+}

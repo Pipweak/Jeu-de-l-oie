@@ -15,3 +15,9 @@ $font: (
     src: url("../assets/fonts/#{$value}.otf");
   }
 }
+
+:root, :host {
+  @each $suffix, $value in $font {
+    --oie-font-#{$suffix}: #{$value};
+  }
+}

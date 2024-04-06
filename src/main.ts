@@ -1,6 +1,5 @@
-import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
-import { AppComponent } from './app/app.component';
+import { bootstrapApplication } from "@angular/platform-browser";
+import { PlateauComponent } from "./app/components/plateau/plateau.component";
 
-bootstrapApplication(AppComponent, appConfig)
+bootstrapApplication(PlateauComponent)
   .catch((err) => console.error(err));
