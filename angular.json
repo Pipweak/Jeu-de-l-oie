@@ -20,6 +20,7 @@
             "outputPath": "dist/jeu-de-l-oie",
             "index": "src/index.html",
             "browser": "src/main.ts",
+            "baseHref": "Jeu-de-l-oie",
             "polyfills": [
               "zone.js"
             ],
