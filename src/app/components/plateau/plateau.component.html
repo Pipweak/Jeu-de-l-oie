@@ -1,7 +1,12 @@
 <main>
   <mat-drawer-container [hasBackdrop]="true" autosize class="oie-drawer-container">
-    <oie-step></oie-step>
-    <svg viewBox="0 0 1190.55 841.89" x="0px" xmlns="http://www.w3.org/2000/svg" y="0px">
+
+<!--    <oie-step #step1 [type]="StepType.BUBBLE" [value]="'ein'"></oie-step>-->
+
+    <div class="svg-container"
+         [class.editable]="editSteps"
+         [attr.contenteditable]="editSteps">
+     <svg viewBox="0 0 1190.55 841.89" x="0px" xmlns="http://www.w3.org/2000/svg" y="0px">
       <style type="text/css">
         .st0 {
           fill: none;
@@ -3645,7 +3650,7 @@
       </g>
       <g id="Rainbow">
         <g>
-          <path id="RainbowPath" class="st13" d="M1129.52,384.59c-13.25-11.12-31.12-7.76-48.41-4.51c-17.24,3.24-33.54,6.3-44.28-4.59
+          <path #path id="path"  class="st13" d="M1129.52,384.59c-13.25-11.12-31.12-7.76-48.41-4.51c-17.24,3.24-33.54,6.3-44.28-4.59
     			c-6.34-6.42-6.65-13.39-7.08-23.04c-0.46-10.29-1.03-23.1-9.85-39.02c-9.57-17.27-22.41-26.93-31.78-33.99
     			c-5.64-4.24-10.51-7.91-9.8-10.08c0.38-1.16,3.07-5.02,21.66-5.85c11.92-0.53,25.33,0.39,33.35,0.94
     			c16.25,1.11,26.98,3.23,35.61,4.92c12.19,2.4,19.55,3.85,29.66-0.52c23.66-10.21,40-42.65,31.79-63.1
@@ -5585,6 +5590,7 @@
         </g>
       </g>
     </svg>
+    </div>
 
     <div class="oie-sidenav-trigger">
       @if (!drawer.opened) {
@@ -5597,7 +5603,10 @@
 
     <mat-drawer #drawer class="oie-drawer" mode="side" position="end">
       <h1>Manage steps</h1>
-      <mat-checkbox (click)="withSteps = !withSteps">Avec Bulles</mat-checkbox>
+      <div class="board-manager">
+        <mat-checkbox [checked]="withSteps" (click)="withSteps = !withSteps">With Steps</mat-checkbox>
+        <mat-checkbox [checked]="editSteps" (click)="editSteps = !editSteps">Edit Steps</mat-checkbox>
+      </div>
     </mat-drawer>
 
 
@@ -30939,4 +30948,4 @@ iIiIiIiIiAAK0EVERERERERERERERERERAD4/wDAMbt/glFXpQAAAABJRU5ErkJggg==">
       </g>
     </g>
   </svg>
-</ng-template>/
+</ng-template>

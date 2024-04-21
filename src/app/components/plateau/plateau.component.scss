@@ -2,7 +2,10 @@ main {
   width: 100%;
   height: 100vh;
 
-  svg {
+  .svg-container {
+    height: 100%;
+
+    svg {
     height: 98%;
     margin: 0 auto;
     width: 100%;
@@ -37,6 +40,7 @@ main {
     }
 
   }
+  }
 }
 
 .oie-drawer-container {
@@ -47,6 +51,7 @@ main {
 
   .oie-drawer {
     padding: 20px;
+
   }
 
   .oie-sidenav-trigger {
@@ -57,3 +62,14 @@ main {
 
 }
 
+/**
+ * Manages the Board.
+ */
+.board-manager {
+  display: flex;
+  flex-direction: column;
+}
+
+.editable g:active > circle {
+  fill:orange;
+}

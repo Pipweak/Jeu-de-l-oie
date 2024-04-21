@@ -9,7 +9,7 @@ import { Component, Input } from "@angular/core";
 })
 export class StepComponent {
 
-  @Input() value= 'ein';
+  @Input() value= '';
   @Input() type = StepType.BUBBLE;
 
 }
