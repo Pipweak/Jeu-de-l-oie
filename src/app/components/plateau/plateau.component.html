@@ -5604,8 +5604,8 @@
     <mat-drawer #drawer class="oie-drawer" mode="side" position="end">
       <h1>Manage steps</h1>
       <div class="board-manager">
-        <mat-checkbox [checked]="withSteps" (click)="withSteps = !withSteps">With Steps</mat-checkbox>
-        <mat-checkbox [checked]="editSteps" (click)="editSteps = !editSteps">Edit Steps</mat-checkbox>
+        <mat-checkbox [(ngModel)]="withSteps">With Steps</mat-checkbox>
+        <mat-checkbox [(ngModel)]="editSteps">Edit Steps</mat-checkbox>
       </div>
     </mat-drawer>
 

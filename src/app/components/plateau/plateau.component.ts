@@ -8,6 +8,7 @@ import { StepComponent, StepType } from "../step/step.component";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 
 import { gsap } from 'gsap'
+import { FormsModule } from "@angular/forms";
 
 @Component({
   selector: "oie-plateau",
@@ -21,7 +22,8 @@ import { gsap } from 'gsap'
     NgTemplateOutlet,
     MatCheckbox,
     NgIf,
-    StepComponent
+    StepComponent,
+    FormsModule
   ],
   templateUrl: "./plateau.component.html",
   styleUrl: "./plateau.component.scss"
@@ -40,6 +42,10 @@ export class PlateauComponent implements AfterViewInit {
 
   protected readonly PlateauType = PlateauType;
   protected readonly StepType = StepType;
+
+  toggleMe(b: boolean) {
+    b = !b;
+  }
 
   ngAfterViewInit(): void {
     gsap.registerPlugin(MotionPathPlugin)
