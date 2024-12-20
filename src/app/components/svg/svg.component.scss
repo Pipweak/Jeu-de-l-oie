@@ -1,0 +1,35 @@
+
+svg {
+  height: 98%;
+  margin: 0 auto;
+  width: 100%;
+
+  .oie-bubble {
+    fill: #FFF;
+    stroke: #000;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+  }
+
+  .oie-bubble-text {
+    font-family: Arial, serif;
+    font-size: 28px;
+  }
+
+  .oie-stars-text,
+  .oie-unicorn-speech {
+    stroke: #000;
+    stroke-miterlimit: 10;
+  }
+
+  .oie-stars-text {
+    font-family: var(--oie-font-7);
+    font-size: 53px;
+  }
+
+  .oie-unicorn-speech {
+    font-family: var(--oie-font-7);
+    stroke-width: 0.25;
+    font-size: 30px;
+  }
+}

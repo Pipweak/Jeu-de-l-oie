@@ -4,42 +4,24 @@ main {
 
   .svg-container {
     height: 100%;
+    display: flex;
+    align-items: center;
 
-    svg {
-    height: 98%;
-    margin: 0 auto;
-    width: 100%;
+    .svg-wrapper {
+      position: relative; /* Ensure the step is positioned relative to this container */
+      flex: 1 1 100%;
 
-    .oie-bubble {
-      fill: #FFF;
-      stroke: #000;
-      stroke-width: 2;
-      stroke-miterlimit: 10;
+      oie-svg {
+        position: absolute;
+        width: 100%;
+      }
+
+      oie-step {
+        position: absolute;
+        display: block;
+        visibility: visible;
+      }
     }
-
-    .oie-bubble-text {
-      font-family: Arial, serif;
-      font-size: 28px;
-    }
-
-    .oie-stars-text,
-    .oie-unicorn-speech {
-      stroke: #000;
-      stroke-miterlimit: 10;
-    }
-
-    .oie-stars-text {
-      font-family: var(--oie-font-7);
-      font-size: 53px;
-    }
-
-    .oie-unicorn-speech {
-      font-family: var(--oie-font-7);
-      stroke-width: 0.25;
-      font-size: 30px;
-    }
-
-  }
   }
 }
 
@@ -48,10 +30,8 @@ main {
   height: 100%;
   background: transparent;
 
-
   .oie-drawer {
     padding: 20px;
-
   }
 
   .oie-sidenav-trigger {
@@ -59,7 +39,6 @@ main {
     top: 16px;
     right: 16px;
   }
-
 }
 
 /**
@@ -71,5 +50,5 @@ main {
 }
 
 .editable g:active > circle {
-  fill:orange;
+  fill: orange;
 }

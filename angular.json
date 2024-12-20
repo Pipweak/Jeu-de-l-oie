@@ -20,7 +20,6 @@
             "outputPath": "dist/jeu-de-l-oie",
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "baseHref": "Jeu-de-l-oie",
             "polyfills": [
               "zone.js"
             ],
@@ -50,12 +49,14 @@
                   "maximumError": "4kb"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "baseHref": "Jeu-de-l-oie"
             },
             "development": {
               "optimization": false,
               "extractLicenses": false,
-              "sourceMap": true
+              "sourceMap": true,
+              "baseHref": "/"
             }
           },
           "defaultConfiguration": "production"

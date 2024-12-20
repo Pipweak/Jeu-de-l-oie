@@ -5,10 +5,15 @@ import { MatIcon } from "@angular/material/icon";
 import { NgIf, NgTemplateOutlet } from "@angular/common";
 import { MatCheckbox } from "@angular/material/checkbox";
 import { StepComponent, StepType } from "../step/step.component";
+import { FormsModule } from "@angular/forms";
+import { SvgComponent } from "../svg/svg.component";
+
+import { gsap } from "gsap";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 
-import { gsap } from 'gsap'
-import { FormsModule } from "@angular/forms";
+gsap.registerPlugin(MotionPathPlugin);
+
+gsap.registerPlugin(MotionPathPlugin);
 
 @Component({
   selector: "oie-plateau",
@@ -23,47 +28,38 @@ import { FormsModule } from "@angular/forms";
     MatCheckbox,
     NgIf,
     StepComponent,
-    FormsModule
+    FormsModule,
+    SvgComponent
   ],
   templateUrl: "./plateau.component.html",
   styleUrl: "./plateau.component.scss"
 })
 export class PlateauComponent implements AfterViewInit {
-  showFiller = false;
-
   /**
    * Enable Steps onto the Board.
    */
-  @Input() withSteps = true;
+  @Input() withSteps = false;
   @Input() editSteps = false;
 
-  @ViewChild('step1') step1?: ElementRef
-  @ViewChild('path') path?: ElementRef
+  @ViewChild("step1", { read: ElementRef }) step1!: ElementRef;
+  @ViewChild("path") path?: ElementRef;
 
-  protected readonly PlateauType = PlateauType;
   protected readonly StepType = StepType;
 
-  toggleMe(b: boolean) {
-    b = !b;
-  }
 
   ngAfterViewInit(): void {
-    gsap.registerPlugin(MotionPathPlugin)
+    const path = document.querySelector("#targetPath") as SVGPathElement;
+    const fraction = 0.5; // Position at 50% of the path length
+    const pathLength = path.getTotalLength();
+    const point = path.getPointAtLength(pathLength * fraction);
 
-    if (this.step1 && this.path) {
-     gsap.to(this.step1.nativeElement,
- {
-         duration: 5,
-         motionPath: {
-          path : '#path',
-          start: 0.25
-        }
-     })
-    }
+    // Access the projected content (oie-step component)
+    const element = this.step1.nativeElement as HTMLElement;
+
+    gsap.set(element, {
+      x: point.x,
+      y: point.y,
+      transformOrigin: "50% 50%"
+    });
   }
-}
-
-export enum PlateauType {
-  WITH = "with",
-  WITHOUT = "without"
 }
